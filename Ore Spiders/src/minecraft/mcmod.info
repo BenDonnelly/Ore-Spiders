@@ -1,0 +1,17 @@
+[
+{
+  "modid": "os",
+  "name": "Ore Spiders",
+  "description": "Ore spiders is a user requested mod which adds multiple spiders relating to various ores",
+  "version": "1.0",
+  "mcversion": "1.6.4",
+  "logoFile": "",
+  "url": "arcticraft.net",
+  "updateUrl": "",
+  "authors": ["Ben Donnelly"],
+  "credits": "Ben Donnelly, Vaderman24",
+  "parent": "",
+  "screenshots": [""],
+  "dependencies": ["MinecraftForge Version"]
+}
+]

@@ -23,7 +23,7 @@ public class EntityRedstoneSpider extends EntitySpider
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(16.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.900000011920929D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(40.0D);

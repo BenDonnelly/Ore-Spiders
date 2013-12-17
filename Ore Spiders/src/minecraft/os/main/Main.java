@@ -12,6 +12,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Strings.MOD_ID, name = Strings.MOD_NAME, version = Strings.MOD_VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -30,6 +31,7 @@ public class Main
 		diamondNugget = (new Item(3001)).setUnlocalizedName("diamondNugget").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Strings.MOD_ID  + ":diamond_nugget");
 		EntityRegister.registerEntities();
 		GameRegistry.addRecipe(new ItemStack(Item.diamond), new Object[] {"XXX" , "X X" , "XXX" , Character.valueOf('X') , diamondNugget});
+		LanguageRegistry.addName(diamondNugget, "Diamond Nugget");
 		
 	}
 
