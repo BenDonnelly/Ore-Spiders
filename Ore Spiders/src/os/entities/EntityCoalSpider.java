@@ -9,7 +9,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-
+//all dese errors. :C are they normal? like with versions yah, they're expected, errors, 
 public class EntityCoalSpider extends EntitySpider
 {
 

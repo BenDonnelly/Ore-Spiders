@@ -1,35 +1,23 @@
 #GITIGNORE for Ore Spiders
 
-/Ore Spiders/.metadata
+/Ore Spiders/.gradle/
+/Ore Spiders/.metadata/
+/Ore Spiders/.settings/
 /Ore Spiders/bin/
-/Ore Spiders/conf/
-/Ore Spiders/docs/
+/Ore Spiders/build/
 /Ore Spiders/eclipse/
-/Ore Spiders/forge/
-/Ore Spiders/jars/
-/Ore Spiders/lib/
-/Ore Spiders/logs/
-/Ore Spiders/reobf/
-/Ore Spiders/runtime/
-/Ore Spiders/temp/
-/Ore Spiders/CHANGELOG
-/Ore Spiders/LICENSE.txt
-
+/Ore Spiders/gradle/
+/Ore Spiders/.classpath
+/Ore Spiders/.project
+/Ore Spiders/build.gradle
+/Ore Spiders/CREDITS-fml.txt
+/Ore Spiders/forge-1.7.2-10.12.0.982-changelog.txt
+/Ore Spiders/gradlew
+/Ore Spiders/LICENSE-fml.txt
+/Ore Spiders/MinecraftForge-Credits.txt
+/Ore Spiders/MinecraftForge-License.txt
 
 *.bat
 *.sh
 *.zip
 *.cfg
-
-/Ore Spiders/src/minecraft/cpw/
-/Ore Spiders/src/minecraft/ibxm/
-/Ore Spiders/src/minecraft/paulscode/
-/Ore Spiders/src/minecraft/net/
-/Ore Spiders/src/minecraft/resources/
-/Ore Spiders/src/minecraft/fmlversion.properties
-/Ore Spiders/src/minecraft/forge_logo.png
-/Ore Spiders/src/minecraft/mcp.png
-/Ore Spiders/src/minecraft/mcpmod.info
-/Ore Spiders/src/minecraft/Start.java
-/Ore Spiders/src/minecraft/deobfuscation_data-1.6.4.lzma
-/Ore Spiders/modsrc/

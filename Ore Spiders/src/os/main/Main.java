@@ -1,6 +1,7 @@
 package os.main;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import os.entities.EntityRegister;
@@ -10,7 +11,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -30,7 +30,7 @@ public class Main
 		proxy.registerRenderThings();
 		diamondNugget = (new Item(3001)).setUnlocalizedName("diamondNugget").setCreativeTab(CreativeTabs.tabMaterials).setTextureName(Strings.MOD_ID  + ":diamond_nugget");
 		EntityRegister.registerEntities();
-		GameRegistry.addRecipe(new ItemStack(Item.diamond), new Object[] {"XXX" , "X X" , "XXX" , Character.valueOf('X') , diamondNugget});
+		GameRegistry.addRecipe(new ItemStack(Items.diamond), new Object[] {"XXX" , "X X" , "XXX" , Character.valueOf('X') , diamondNugget});
 		LanguageRegistry.addName(diamondNugget, "Diamond Nugget");
 		
 	}
