@@ -11,11 +11,13 @@
 /Ore Spiders/.project
 /Ore Spiders/build.gradle
 /Ore Spiders/CREDITS-fml.txt
-/Ore Spiders/forge-1.7.2-10.12.0.982-changelog.txt
+/Ore Spiders/forge-1.7.10-10.13.2.1230-changelog.txt
 /Ore Spiders/gradlew
 /Ore Spiders/LICENSE-fml.txt
 /Ore Spiders/MinecraftForge-Credits.txt
 /Ore Spiders/MinecraftForge-License.txt
+/Ore Spiders/README.TXT
+
 
 *.bat
 *.sh
