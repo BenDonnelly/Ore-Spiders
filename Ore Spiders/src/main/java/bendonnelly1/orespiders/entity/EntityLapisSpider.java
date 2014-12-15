@@ -11,7 +11,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityLapisSpider extends EntitySpider{
+public class EntityLapisSpider extends EntityOreSpider{
 
 	public EntityLapisSpider(World world){
 		super(world);
@@ -73,7 +73,7 @@ public class EntityLapisSpider extends EntitySpider{
 		{
 			if(ent instanceof EntityLivingBase)
 			{
-				((EntityLivingBase) ent).addPotionEffect(new PotionEffect(Potion.digSlowdown.id, 300, 1));
+				((EntityLivingBase) ent).addPotionEffect(new PotionEffect(Potion.digSlowdown.id, 600, 1));
 			}
 			return true;
 		}

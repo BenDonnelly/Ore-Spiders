@@ -8,5 +8,7 @@ entity.GoldSpider.name=Gold Spider
 entity.NetherQuartzSpider.name=Nether Quartz Spider
 entity.LapisSpider.name=Lapis Spider
 entity.RedstoneSpider.name=Redstone Spider
+entity.QueenSpider.name=Queen Spider
 
-item.diamondNugget.name=Diamond Nugget
+item.orespiders.queenSpiderPotion.name=Mysterious Potion
+item.orespiders.queenSpiderEye.name=Queen Spider Eye

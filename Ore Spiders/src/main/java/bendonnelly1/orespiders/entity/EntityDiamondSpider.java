@@ -11,7 +11,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityDiamondSpider extends EntitySpider{
+public class EntityDiamondSpider extends EntityOreSpider{
 
 	public EntityDiamondSpider(World world){
 		super(world);
@@ -54,7 +54,7 @@ public class EntityDiamondSpider extends EntitySpider{
 				}
 				else
 				{
-					this.dropItem(OreSpiders.diamond_nugget, amountToDropWithLootEnchant);
+					this.dropItem(Items.diamond, amountToDropWithLootEnchant);
 					this.dropItem(Items.spider_eye, amountToDropWithLootEnchant);
 				}
 			}

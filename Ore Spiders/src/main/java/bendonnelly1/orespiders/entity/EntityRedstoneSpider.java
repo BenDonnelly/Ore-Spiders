@@ -8,7 +8,7 @@ import net.minecraft.init.Items;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityRedstoneSpider extends EntitySpider{
+public class EntityRedstoneSpider extends EntityOreSpider{
 
 	public EntityRedstoneSpider(World world){
 		super(world);

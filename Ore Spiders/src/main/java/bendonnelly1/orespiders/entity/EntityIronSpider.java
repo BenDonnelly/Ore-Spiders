@@ -3,14 +3,13 @@ package bendonnelly1.orespiders.entity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.init.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityIronSpider extends EntitySpider{
+public class EntityIronSpider extends EntityOreSpider{
 
 	public EntityIronSpider(World world){
 		super(world);
@@ -72,7 +71,7 @@ public class EntityIronSpider extends EntitySpider{
 		{
 			if(ent instanceof EntityLivingBase)
 			{
-				((EntityLivingBase) ent).addPotionEffect(new PotionEffect(Potion.blindness.id, 40, 1));
+				((EntityLivingBase) ent).addPotionEffect(new PotionEffect(Potion.blindness.id, 40, 2));
 			}
 			return true;
 		}

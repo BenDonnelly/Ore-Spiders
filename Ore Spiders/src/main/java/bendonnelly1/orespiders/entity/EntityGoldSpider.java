@@ -10,7 +10,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityGoldSpider extends EntitySpider{
+public class EntityGoldSpider extends EntityOreSpider{
 
 	public EntityGoldSpider(World world){
 		super(world);

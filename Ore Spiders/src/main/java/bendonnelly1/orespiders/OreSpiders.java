@@ -4,58 +4,43 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import bendonnelly1.orespiders.client.renderer.RenderCoalSpider;
-import bendonnelly1.orespiders.client.renderer.RenderDiamondSpider;
-import bendonnelly1.orespiders.client.renderer.RenderEmeraldSpider;
-import bendonnelly1.orespiders.client.renderer.RenderEnderSpider;
-import bendonnelly1.orespiders.client.renderer.RenderGoldSpider;
-import bendonnelly1.orespiders.client.renderer.RenderIronSpider;
-import bendonnelly1.orespiders.client.renderer.RenderLapisSpider;
-import bendonnelly1.orespiders.client.renderer.RenderObsidianSpider;
-import bendonnelly1.orespiders.client.renderer.RenderQuartzSpider;
-import bendonnelly1.orespiders.client.renderer.RenderRedstoneSpider;
-import bendonnelly1.orespiders.entity.EntityCoalSpider;
-import bendonnelly1.orespiders.entity.EntityDiamondSpider;
-import bendonnelly1.orespiders.entity.EntityEmeraldSpider;
-import bendonnelly1.orespiders.entity.EntityEnderSpider;
-import bendonnelly1.orespiders.entity.EntityGoldSpider;
-import bendonnelly1.orespiders.entity.EntityIronSpider;
-import bendonnelly1.orespiders.entity.EntityLapisSpider;
-import bendonnelly1.orespiders.entity.EntityObsidianSpider;
-import bendonnelly1.orespiders.entity.EntityQuartzSpider;
-import bendonnelly1.orespiders.entity.EntityRedstoneSpider;
-import cpw.mods.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "oreSpiders", version = "1.0")
+@Mod(modid = OreSpiders.MOD_ID, version = OreSpiders.VERSION, name = OreSpiders.NAME)
 public class OreSpiders{
 
-	public static Item diamond_nugget = new Item().setUnlocalizedName("diamondNugget").setCreativeTab(CreativeTabs.tabMaterials).setTextureName("orespiders:diamond_nugget");
-
+	public static final String MOD_ID = "orespiders";
+	public static final String VERSION = "1.2";
+	public static final String NAME = "Ore Spiders";
+	
+	@SidedProxy(clientSide = "bendonnelly1.orespiders.ClientProxy", serverSide = "bendonnelly1.orespiders.CommonProxy")
+	public static CommonProxy proxy;
+	
+	@Mod.Instance(OreSpiders.MOD_ID)
+	public static OreSpiders oreSpiderInstance;
+	
+	public static Item queenSpiderPotion; 
+	public static Item queenSpiderEye;
+	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
+	public void Init(FMLInitializationEvent event)
 	{
-		GameRegistry.registerItem(diamond_nugget, "diamondNugget");
-		GameRegistry.addRecipe(new ItemStack(Items.diamond), new Object[] {"XXX", "X X", "XXX", Character.valueOf('X'), diamond_nugget});
-
+		
+		proxy.registerRenderThings();
 		SpiderRegister.registerEntities();
-
-		// Check whether the mod is runned on client, if not do return
-		if(!event.getSide().isClient()) return;
-
-		RenderingRegistry.registerEntityRenderingHandler(EntityCoalSpider.class, new RenderCoalSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityDiamondSpider.class, new RenderDiamondSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityEmeraldSpider.class, new RenderEmeraldSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityEnderSpider.class, new RenderEnderSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityGoldSpider.class, new RenderGoldSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityIronSpider.class, new RenderIronSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityLapisSpider.class, new RenderLapisSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityQuartzSpider.class, new RenderQuartzSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityObsidianSpider.class, new RenderObsidianSpider());
-		RenderingRegistry.registerEntityRenderingHandler(EntityRedstoneSpider.class, new RenderRedstoneSpider());
+		MinecraftForge.EVENT_BUS.register(new OreSpidersEvents());
+		
+		queenSpiderPotion = new ItemQueenSpiderPotion();
+		queenSpiderEye = new Item().setUnlocalizedName(MOD_ID + "." + "queenSpiderEye").setTextureName(MOD_ID + ":" + "eye_queen_spider").setCreativeTab(CreativeTabs.tabMaterials);
+		GameRegistry.registerItem(queenSpiderEye, "queenSpiderEye");
+		
+		GameRegistry.addRecipe(new ItemStack(queenSpiderEye), new Object[] {"DRI", "EGL", "SCS", Character.valueOf('D'), Items.diamond, Character.valueOf('R'), Items.redstone, Character.valueOf('I'), Items.iron_ingot, Character.valueOf('E'), Items.emerald, Character.valueOf('G'), Items.gold_ingot, Character.valueOf('L'), new ItemStack(Items.dye, 4), Character.valueOf('S'), Items.spider_eye, Character.valueOf('C'), Items.coal});
+		GameRegistry.addRecipe(new ItemStack(queenSpiderPotion), new Object[] {"SGS", "GBG", "SGS", Character.valueOf('S'), queenSpiderEye, Character.valueOf('G'), Items.gunpowder, Character.valueOf('B'), Items.glass_bottle});
 	}
 
 }

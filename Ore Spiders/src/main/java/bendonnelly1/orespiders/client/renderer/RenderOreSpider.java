@@ -9,13 +9,14 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
+import bendonnelly1.orespiders.OreSpiders;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public abstract class RenderOreSpider extends RenderLiving{
 
-	private static final ResourceLocation spiderBodyTexture = new ResourceLocation("orespiders", "textures/entity/orespider/body.png");
 
 	public RenderOreSpider(){
 		super(new ModelSpider(), 1.0F);
@@ -31,10 +32,7 @@ public abstract class RenderOreSpider extends RenderLiving{
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity entity)
-	{
-		return spiderBodyTexture;
-	}
+	protected abstract ResourceLocation getEntityTexture(Entity entity);
 
 	@Override
 	protected int shouldRenderPass(EntityLivingBase living, int pass, float f)

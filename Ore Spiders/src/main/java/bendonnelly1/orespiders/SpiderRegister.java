@@ -9,6 +9,7 @@ import bendonnelly1.orespiders.entity.EntityIronSpider;
 import bendonnelly1.orespiders.entity.EntityLapisSpider;
 import bendonnelly1.orespiders.entity.EntityObsidianSpider;
 import bendonnelly1.orespiders.entity.EntityQuartzSpider;
+import bendonnelly1.orespiders.entity.EntityQueenSpider;
 import bendonnelly1.orespiders.entity.EntityRedstoneSpider;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -41,6 +42,7 @@ public class SpiderRegister{
 	static int netherQuartzColour = 0xCACDDB;
 	static int lapisishColour = 0x536CE0;
 	static int redishColour = 0xDE2644;
+	static int muckyGreenColour = 0x354f30;
 
 	public static void registerEntities()
 	{
@@ -104,6 +106,10 @@ public class SpiderRegister{
 				BiomeGenBase.extremeHillsEdge, BiomeGenBase.forest, BiomeGenBase.forestHills, BiomeGenBase.frozenOcean, BiomeGenBase.frozenRiver, BiomeGenBase.iceMountains,
 				BiomeGenBase.icePlains, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.plains, BiomeGenBase.swampland, BiomeGenBase.taiga,
 				BiomeGenBase.taigaHills);
+	      //QUEEN SPIDER
+        EntityRegistry.registerGlobalEntityID(EntityQueenSpider.class, "QueenSpider", EntityRegistry.findGlobalUniqueEntityId(), blackColour, muckyGreenColour);
+     
+		
 	}
 
 }

@@ -10,7 +10,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityEmeraldSpider extends EntitySpider{
+public class EntityEmeraldSpider extends EntityOreSpider{
 
 	public EntityEmeraldSpider(World world){
 		super(world);

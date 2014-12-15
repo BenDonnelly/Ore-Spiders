@@ -12,7 +12,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityObsidianSpider extends EntitySpider{
+public class EntityObsidianSpider extends EntityOreSpider{
 
 	public EntityObsidianSpider(World world){
 		super(world);

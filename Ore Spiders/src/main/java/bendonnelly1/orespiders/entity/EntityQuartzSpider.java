@@ -9,7 +9,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class EntityQuartzSpider extends EntitySpider{
+public class EntityQuartzSpider extends EntityOreSpider{
 
 	public EntityQuartzSpider(World world){
 		super(world);

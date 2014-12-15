@@ -10,7 +10,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class EntityCoalSpider extends EntitySpider{
+public class EntityCoalSpider extends EntityOreSpider{
 
 	public EntityCoalSpider(World world){
 		super(world);
