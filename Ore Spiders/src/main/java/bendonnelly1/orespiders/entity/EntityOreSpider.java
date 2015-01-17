@@ -21,20 +21,29 @@ public class EntityOreSpider extends EntityMob{
 
 	private static final String __OBFID = "CL_00001699";
 
-	public EntityOreSpider(World p_i1743_1_){
-		super(p_i1743_1_);
+	public double knockbackHeight = 0.4000000059604645D;
+	public double moveSpeed = 0.800000011920929D;
+
+	public EntityOreSpider(World world){
+		super(world);
 		this.setSize(1.4F, 0.9F);
 	}
 
+	@Override
 	protected void entityInit()
 	{
 		super.entityInit();
 		this.dataWatcher.addObject(16, new Byte((byte) 0));
 	}
 
-	/**
-	 * Called to update the entity's position/logic.
-	 */
+	@Override
+	protected void applyEntityAttributes()
+	{
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.800000011920929D);
+	}
+
+	@Override
 	public void onUpdate()
 	{
 		super.onUpdate();
@@ -45,17 +54,26 @@ public class EntityOreSpider extends EntityMob{
 		}
 	}
 
-	protected void applyEntityAttributes()
+	public void setKnockbackHeight(double height)
 	{
-		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(16.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.800000011920929D);
+		this.knockbackHeight = height;
+	}
+
+	public void setMovementSpeed(double speed)
+	{
+		this.moveSpeed = speed;
+		this.updateEntityAttributes();
+	}
+
+	public void updateEntityAttributes()
+	{
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(moveSpeed);
 	}
 
 	/**
 	 * Finds the closest player within 16 blocks to attack, or null if this Entity isn't interested in attacking (Animals, Spiders at day, peaceful PigZombies).
 	 */
-	protected Entity findPlayerToAttack()
+	public Entity findPlayerToAttack()
 	{
 		double d0 = 16.0D;
 		return this.worldObj.getClosestVulnerablePlayerToEntity(this, d0);
@@ -105,7 +123,7 @@ public class EntityOreSpider extends EntityMob{
 				float f2 = MathHelper.sqrt_double(d0 * d0 + d1 * d1);
 				this.motionX = d0 / (double) f2 * 0.5D * 0.800000011920929D + this.motionX * 0.20000000298023224D;
 				this.motionZ = d1 / (double) f2 * 0.5D * 0.800000011920929D + this.motionZ * 0.20000000298023224D;
-				this.motionY = 0.4000000059604645D;
+				this.knockbackHeight = 0.4000000059604645D;
 			}
 		}
 		else

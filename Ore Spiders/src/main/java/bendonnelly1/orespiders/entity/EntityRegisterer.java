@@ -1,16 +1,6 @@
-package bendonnelly1.orespiders;
+package bendonnelly1.orespiders.entity;
 
-import bendonnelly1.orespiders.entity.EntityCoalSpider;
-import bendonnelly1.orespiders.entity.EntityDiamondSpider;
-import bendonnelly1.orespiders.entity.EntityEmeraldSpider;
-import bendonnelly1.orespiders.entity.EntityEnderSpider;
-import bendonnelly1.orespiders.entity.EntityGoldSpider;
-import bendonnelly1.orespiders.entity.EntityIronSpider;
-import bendonnelly1.orespiders.entity.EntityLapisSpider;
-import bendonnelly1.orespiders.entity.EntityObsidianSpider;
-import bendonnelly1.orespiders.entity.EntityQuartzSpider;
-import bendonnelly1.orespiders.entity.EntityQueenSpider;
-import bendonnelly1.orespiders.entity.EntityRedstoneSpider;
+import bendonnelly1.orespiders.OreSpiders;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityList.EntityEggInfo;
@@ -19,7 +9,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.BiomeGenEnd;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
-public class SpiderRegister{
+public class EntityRegisterer{
 
 	static int zombieBackGround = 0x00AFAF;
 	static int zombieSpots = 0x5FA88E;
@@ -109,6 +99,11 @@ public class SpiderRegister{
 	      //QUEEN SPIDER
         EntityRegistry.registerGlobalEntityID(EntityQueenSpider.class, "QueenSpider", EntityRegistry.findGlobalUniqueEntityId(), blackColour, muckyGreenColour);
      
+        //Queen Spider Potion
+		EntityRegistry.registerModEntity(EntityQueenSpiderPotion.class, "queenSpiderPotion", 0, OreSpiders.oreSpiderInstance, 64, 3, true);
+		
+		//EntityOrbWeaver
+		EntityRegistry.registerModEntity(EntityOrbWeaver.class, "orbWeaver", 1, OreSpiders.oreSpiderInstance, 64, 10, true);
 		
 	}
 

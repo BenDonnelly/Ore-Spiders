@@ -1,5 +1,6 @@
 package bendonnelly1.orespiders;
 
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import bendonnelly1.orespiders.entity.*;
 import bendonnelly1.orespiders.client.renderer.*;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -21,6 +22,8 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityObsidianSpider.class, new RenderObsidianSpider());
 		RenderingRegistry.registerEntityRenderingHandler(EntityRedstoneSpider.class, new RenderRedstoneSpider());
 		RenderingRegistry.registerEntityRenderingHandler(EntityQueenSpider.class, new RenderQueenSpider());
+		RenderingRegistry.registerEntityRenderingHandler(EntityQueenSpiderPotion.class, new RenderSnowball(OreSpiders.queenSpiderPotion));
+		RenderingRegistry.registerEntityRenderingHandler(EntityOrbWeaver.class, new RenderOrbWeaver(OreSpiders.orbWeaver));
 	}
 
 }

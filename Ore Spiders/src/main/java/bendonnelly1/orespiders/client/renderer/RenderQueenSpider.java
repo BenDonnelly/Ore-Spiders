@@ -7,6 +7,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.BossStatus;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
@@ -33,10 +36,29 @@ public class RenderQueenSpider extends RenderLiving{
 	private static final ResourceLocation spiderEyesPhase3 = new ResourceLocation(OreSpiders.MOD_ID, "textures/spiders/queen/eyes_queen_phase_3.png");
 	private static final ResourceLocation spiderBodyPhase3 = new ResourceLocation(OreSpiders.MOD_ID, "textures/spiders/queen/body_queen_phase_3.png");
 
-	private EntityQueenSpider queenSpider;
-
 	private void scaleQueenSpider(EntityQueenSpider queenSpider, float par2)
 	{
+
+		if(queenSpider.hasPhaseChanged())
+		{
+			if(queenSpider.getPhase() == 0)
+			{
+				queenSpider.expandBoundingBox(1.0F);
+			}
+			else if(queenSpider.getPhase() == 1)
+			{
+				queenSpider.expandBoundingBox(1.7F);
+			}
+			else if(queenSpider.getPhase() == 2)
+			{
+				queenSpider.expandBoundingBox(1.4F);
+			}
+			else if(queenSpider.getPhase() == 3)
+			{
+				queenSpider.expandBoundingBox(0.9F);
+			}
+		}
+
 		if(queenSpider.getPhase() == 0)
 		{
 			GL11.glScalef(1.0F, 1.0F, 1.0F);
@@ -51,7 +73,7 @@ public class RenderQueenSpider extends RenderLiving{
 		}
 		else if(queenSpider.getPhase() == 3)
 		{
-			GL11.glScalef(0.7F, 0.7F, 0.7F);
+			GL11.glScalef(0.9F, 0.9F, 0.9F);
 		}
 	}
 
@@ -72,7 +94,7 @@ public class RenderQueenSpider extends RenderLiving{
 		}
 		else
 		{
-			return spiderEyesPhase0;
+			return spiderEyesPhase3;
 		}
 	}
 
@@ -128,7 +150,7 @@ public class RenderQueenSpider extends RenderLiving{
 		}
 		else
 		{
-			return spiderBodyPhase0;
+			return spiderBodyPhase3;
 		}
 	}
 
@@ -137,6 +159,8 @@ public class RenderQueenSpider extends RenderLiving{
 	{
 		return getTextureBasedOfPhase((EntityQueenSpider) entity);
 	}
+
+	
 
 	@Override
 	protected int shouldRenderPass(EntityLivingBase living, int pass, float f)
