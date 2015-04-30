@@ -37,7 +37,7 @@ public class EntityQueenSpider extends EntityOreSpider implements IBossDisplayDa
 	{
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(200.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1.99900011920929D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1.6000011920929D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(9.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(40.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(1.0);
@@ -49,7 +49,7 @@ public class EntityQueenSpider extends EntityOreSpider implements IBossDisplayDa
 	{
 		if(attackedByPlayer)
 		{
-			double d0 = 16.0D;
+			double d0 = 40.0D;
 			this.worldObj.getClosestVulnerablePlayerToEntity(this, d0);
 		}
 		return null;
@@ -128,15 +128,15 @@ public class EntityQueenSpider extends EntityOreSpider implements IBossDisplayDa
 
 	public int getPhase()
 	{
-		if(queenSpiderHealth == 200)
+		if(queenSpiderHealth == 200)//100 hearts
 		{
 			phase = 0;
 		}
-		else if(queenSpiderHealth <= 199 && queenSpiderHealth > 100)
+		else if(queenSpiderHealth <= 199 && queenSpiderHealth > 100)//99.5 && 50 hearts
 		{
 			phase = 1;
 		}
-		else if(queenSpiderHealth <= 100 && queenSpiderHealth > 50)
+		else if(queenSpiderHealth <= 100 && queenSpiderHealth > 25)//50 && 25
 		{
 			phase = 2;
 		}
